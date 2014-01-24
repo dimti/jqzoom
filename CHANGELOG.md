@@ -1,8 +1,16 @@
 Changelog
 =========
 
+0.0.04 (2014-01-24)
+-------------------
+
+- MIRSPORTA-80 push-update.sh - внесение переменной
+  REMOTE_REPOSITORY. [Alexander Demidov]
+
 0.0.03 (2014-01-24)
 -------------------
+
+- Update CHANGELOG.md. [Alexander Demidov]
 
 - MIRSPORTA-80 push-update.sh - корректировка
   отправки изменений в удаленный
