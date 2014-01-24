@@ -1,4 +1,5 @@
 #!/bin/bash
+REMOTE_REPOSITORY='dimti'
 PATH_LIB='/js/jqzoom'
 PROJECTS=( "/var/www/predelanet" "/var/www/zelenoemore" )
 if [ ! -f "CHANGELOG.md" ]
@@ -39,7 +40,7 @@ then
 else
     VERSION=$VERSION_PREVIOUS
 fi
-git push origin HEAD:origin/master >/dev/null || exit 1
+git push "${REMOTE_REPOSITORY}" HEAD:origin/master >/dev/null || exit 1
 
 MESSAGE="\nUpdate ${PATH_LIB} on ${VERSION}\n"
 CURRENT_DIR=`pwd`
