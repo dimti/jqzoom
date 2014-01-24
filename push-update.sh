@@ -41,7 +41,7 @@ then
 else
     VERSION=$VERSION_PREVIOUS
 fi
-git push "${REMOTE_REPOSITORY}" HEAD:"${REMOTE_REPOSITORY}/${REMOTE_BRANCH}" >/dev/null || exit 1
+git push "${REMOTE_REPOSITORY}" HEAD:"${REMOTE_BRANCH}" >/dev/null || exit 1
 
 MESSAGE="\nUpdate ${PATH_LIB} on ${VERSION}\n"
 CURRENT_DIR=`pwd`
