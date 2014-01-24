@@ -1,8 +1,16 @@
 Changelog
 =========
 
+0.0.06 (2014-01-24)
+-------------------
+
+- MIRSPORTA-80 push-update.sh - корректировки git push в
+  названии удаленной ветки [Alexander Demidov]
+
 0.0.05 (2014-01-24)
 -------------------
+
+- Update CHANGELOG.md. [Alexander Demidov]
 
 - MIRSPORTA-80 push-update.sh - корректировки в
   использовании REMOTE_REPOSITORY и REMOTE_BRANCH.
