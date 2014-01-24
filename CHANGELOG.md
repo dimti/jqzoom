@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.0.02 (2014-01-24)
+-------------------
+
+- MIRSPORTA-80 Добавлен CHANGELOG.md и скрипт push-
+  update.sh. [Alexander Demidov]
+
 0.0.01 (2014-01-24)
 -------------------
 
