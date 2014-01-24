@@ -225,7 +225,7 @@
                 el.largeimageloaded = false;
                 var options = new Object();
                 options = $.extend({}, eval("(" + $.trim($(link).attr('rel')) + ")"));
-                if (options.smallimage && options.largeimage) {
+                if (options.smallimage && typeof(options.largeimage) != 'undefined') {
                     var smallimage = options.smallimage;
                     var largeimage = options.largeimage;
                     $(link).addClass('zoomThumbActive');
