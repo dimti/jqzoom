@@ -189,8 +189,10 @@
             load: function () {
                 if (el.largeimageloaded == false && el.largeimageloading == false) {
                     var url = $(el).attr('href');
-                    el.largeimageloading = true;
-                    largeimage.loadimage(url);
+                    if (url) {
+                        el.largeimageloading = true;
+                        largeimage.loadimage(url);
+                    }
                 }
             },
             activate: function (e) {
