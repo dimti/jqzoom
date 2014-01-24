@@ -39,7 +39,7 @@ then
 else
     VERSION=$VERSION_PREVIOUS
 fi
-git push >/dev/null || exit 1
+git push origin HEAD:origin/master >/dev/null || exit 1
 
 MESSAGE="\nUpdate ${PATH_LIB} on ${VERSION}\n"
 CURRENT_DIR=`pwd`
