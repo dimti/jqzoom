@@ -68,6 +68,17 @@ do
             echo -e "Failed to update lib for ${project}\n"
             exit 1
         }
+        if [ $project == "/var/www/predelanet" ]
+        then
+            {
+                echo -e "Update prepared js for ${project}..."
+                ./service/js.sh
+                echo -e "OK\n"
+            } || {
+                echo -e "\nFailed to update prepared js... Please resolve that problem by hand\n"
+                exit 1
+            }
+        fi
     else
         echo -e "Already update\n"
     fi
