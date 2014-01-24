@@ -1,5 +1,6 @@
 #!/bin/bash
 REMOTE_REPOSITORY='dimti'
+REMOTE_BRANCH='dimti_master'
 PATH_LIB='/js/jqzoom'
 PROJECTS=( "/var/www/predelanet" "/var/www/zelenoemore" )
 if [ ! -f "CHANGELOG.md" ]
@@ -32,7 +33,7 @@ then
         git commit -m "Update CHANGELOG.md" > /dev/null &&
         git tag -d "$VERSION" >/dev/null &&
         git tag "$VERSION" >/dev/null &&
-        git push --tags >/dev/null 2>/dev/null
+        git push "${REMOTE_REPOSITORY}" --tags >/dev/null 2>/dev/null
     } || {
         echo -e "Cannot push released tag into remote repository\n"
         exit 1
@@ -40,7 +41,7 @@ then
 else
     VERSION=$VERSION_PREVIOUS
 fi
-git push "${REMOTE_REPOSITORY}" HEAD:origin/master >/dev/null || exit 1
+git push "${REMOTE_REPOSITORY}" HEAD:"${REMOTE_REPOSITORY}/${REMOTE_BRANCH}" >/dev/null || exit 1
 
 MESSAGE="\nUpdate ${PATH_LIB} on ${VERSION}\n"
 CURRENT_DIR=`pwd`
@@ -49,7 +50,7 @@ do
 	echo -e "Update lib for ${project}...\n"
 	{
         cd "${project}${PATH_LIB}" &&
-        git fetch >/dev/null 2>/dev/null &&
+        git fetch "${REMOTE_REPOSITORY}" >/dev/null 2>/dev/null &&
         git checkout "$VERSION" 2>/dev/null;
 	} || {
 	    echo -e "Failed to checkout lib on tag ${VERSION}\n" &&
