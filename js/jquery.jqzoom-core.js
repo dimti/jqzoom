@@ -304,7 +304,7 @@
                 $obj.bottomlimit = image.offset().top + $obj.oh;
             };
             this.node.onerror = function () {
-                alert('Problems while loading image.');
+                //alert('Problems while loading image.');
                 throw 'Problems while loading image.';
             };
             this.node.onload = function () {
